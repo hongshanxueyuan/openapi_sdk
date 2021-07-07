@@ -3,8 +3,8 @@
 from os.path import join, dirname
 from setuptools import setup
 
-PACKAGE_NAME = ''
-PACKAGE_PATH = ''
+PACKAGE_NAME = 'firacademy_openapi'
+PACKAGE_PATH = 'firacademy_openapi'
 
 version = __import__(PACKAGE_PATH).__version__
 
@@ -30,7 +30,7 @@ setup(name=PACKAGE_NAME,
       keywords='',
       url='',
       download_url='',
-      packages=[''],
+      packages=[PACKAGE_PATH],
       long_description=long_description(),
       install_requires=[],
       classifiers=[
@@ -39,5 +39,5 @@ setup(name=PACKAGE_NAME,
                    'License :: OSI Approved :: MIT License',
                    'Intended Audience :: Developers',
                    'Environment :: Web Environment',
-                   'Programming Language :: Python :: 2.7'],
+                   'Programming Language :: Python :: 3.5'],
       zip_safe=False)
