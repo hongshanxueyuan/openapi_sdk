@@ -31,6 +31,8 @@ class Client:
 
     def build_headers(self, uri, method, headers, params, data):
         _headers = {}
+        if 'Date' in headers:
+            _headers['Date'] = headers['Date']
         _headers['X-Ca-Timestamp'] = util.DateUtil.get_timestamp()
         _headers['X-Ca-Key'] = self.app_key
         _headers['X-Ca-Nonce'] = util.UUIDUtil.get_uuid()
