@@ -2,6 +2,11 @@ import base64
 import hashlib
 import hmac
 
+try:
+    from base64 import encodestring as base64encode
+except ImportError:
+    from base64 import encodebytes as base64encode
+
 
 def build_sign_str(uri, method, headers, params=None, data=None):
     lf = '\n'
@@ -73,5 +78,5 @@ def _format_header(headers):
 def sign(source, secret):
     key = bytes(secret, encoding='utf-8')
     h = hmac.new(key, source.encode('utf-8'), hashlib.sha256)
-    signature = base64.encodestring(h.digest()).strip()
+    signature = base64encode(h.digest()).strip()
     return signature
