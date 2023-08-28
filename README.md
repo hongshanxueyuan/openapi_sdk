@@ -18,7 +18,7 @@ API Call Examples
     APP_SECRET = 'your-app-secret'
 
 
-    url= 'http://bbafae24be8d4cfeb7524831fd3f2c63-cn-zhangjiakou.alicloudapi.com/openapi/v2/courses/'
+    url= 'https://openapi.firacademy.com/openapi/v2/courses/'
     client = Client(APP_KEY, APP_SECRET, timeout=30)
     resp = client.request(url, 'GET')
     print(resp.content)
